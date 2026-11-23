@@ -44,6 +44,27 @@ export default defineConfig([
 
 ```
 
+## Counter interaction tests
+
+From this directory, install dependencies once and run the automated tests:
+
+```sh
+npm install
+npm test
+```
+
+Use `npm run test:watch` while editing to rerun tests when files change. The
+interaction tests render the real counter component in jsdom and click its
+accessible buttons using Testing Library.
+
+TC-01, TC-02, and TC-04 are expected to pass. TC-03 and TC-05 are explicitly
+marked as expected failures with Vitest's `it.fails`: both document the known
+defect where Decrement increases the count. The expected-failure assertions
+still run, and Vitest reports an unexpected pass if the behavior changes, so
+remove the `fails` marker and update expectations if the defect is fixed.
+
+These are automated component interaction checks, not a cross-browser test.
+
 You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js

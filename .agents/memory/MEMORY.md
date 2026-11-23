@@ -1,0 +1,1 @@
+- [Installing packages for nested apps](nested-app-package-install.md) — the package installer targets the workspace root, so nested apps need package setup from their own directory.
